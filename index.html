@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Tree Visualizer - Agent Decision Paths</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg-primary: #0a0e17; --bg-secondary: #111827; --bg-card: #1a2332; --text-primary: #f0f4f8; --text-secondary: #94a3b8; --text-muted: #64748b; --accent-blue: #3b82f6; --accent-cyan: #06b6d4; --accent-green: #10b981; --accent-yellow: #f59e0b; --accent-red: #ef4444; --accent-purple: #8b5cf6; --border-color: #2d3748; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+        .header { background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 20px 40px; }
+        .logo-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .container { padding: 32px 40px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 32px; }
+        .stat-card { background: var(--bg-card); border-radius: 16px; padding: 24px; border: 1px solid var(--border-color); text-align: center; }
+        .stat-value { font-size: 32px; font-weight: 700; }
+        .stat-label { font-size: 14px; color: var(--text-muted); }
+        .tree-section { background: var(--bg-card); border-radius: 16px; padding: 24px; border: 1px solid var(--border-color); }
+        .section-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+        .tree-node { padding: 12px 16px; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 8px; border-left: 4px solid var(--accent-green); }
+        .tree-node.decision { border-color: var(--accent-blue); }
+        .tree-node.action { border-color: var(--accent-purple); }
+        .tree-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+        .tree-text { font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header style="background:var(--bg-secondary);border-bottom:1px solid var(--border-color);padding:20px 40px;display:flex;align-items:center;gap:16px;">
+        <div class="logo-icon">🌳</div>
+        <div><h1 style="font-size:22px;background:linear-gradient(135deg,var(--accent-green),var(--accent-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Decision Tree Visualizer</h1><p style="color:var(--text-secondary);font-size:13px;">Agent decision paths & branching logic</p></div>
+    </header>
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-value" style="color:var(--accent-green);">24</div><div class="stat-label">Total Nodes</div></div>
+            <div class="stat-card"><div class="stat-value" style="color:var(--accent-blue);">8</div><div class="stat-label">Decisions</div></div>
+            <div class="stat-card"><div class="stat-value" style="color:var(--accent-purple);">12</div><div class="stat-label">Actions</div></div>
+            <div class="stat-card"><div class="stat-value" style="color:var(--accent-cyan);">4</div><div class="stat-label">Depth</div></div>
+        </div>
+        <div class="tree-section">
+            <h3 class="section-title">🌳 Decision Path #DT-4892</h3>
+            <div class="tree-node decision"><div class="tree-label">Decision</div><div class="tree-text">Is user query about quantum computing?</div></div>
+            <div class="tree-node decision"><div class="tree-label">Decision</div><div class="tree-text">Does user want technical depth?</div></div>
+            <div class="tree-node action"><div class="tree-label">Action</div><div class="tree-text">Fetch quantum physics documents</div></div>
+            <div class="tree-node action"><div class="tree-label">Action</div><div class="tree-text">Generate layered explanation</div></div>
+        </div>
+    </div>
+</body>
+</html>
